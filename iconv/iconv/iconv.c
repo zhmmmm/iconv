@@ -133,10 +133,10 @@ iconv_t iconv_open(const char* tocode, const char* fromcode)
 		}
 		if (buf[0] == '\0') 
 		{
-			tocode = locale_charset();
-			if (tocode[0] == '\0')
+			//tocode = locale_charset();
+			//if (tocode[0] == '\0')
 				goto invalid;
-			continue;
+			//continue;
 		}
 		ap = aliases_lookup(buf, bp - buf);
 		if (ap == NULL)
@@ -147,10 +147,10 @@ iconv_t iconv_open(const char* tocode, const char* fromcode)
 		}
 		if (ap->encoding_index == ei_local_char)
 		{
-			tocode = locale_charset();
-			if (tocode[0] == '\0')
+			//tocode = locale_charset();
+			//if (tocode[0] == '\0')
 				goto invalid;
-			continue;
+			//continue;
 		}
 		if (ap->encoding_index == ei_local_wchar_t)
 		{
@@ -207,10 +207,10 @@ iconv_t iconv_open(const char* tocode, const char* fromcode)
 		}
 		if (buf[0] == '\0')
 		{
-			fromcode = locale_charset();
-			if (fromcode[0] == '\0')
+			//fromcode = locale_charset();
+			//if (fromcode[0] == '\0')
 				goto invalid;
-			continue;
+			//continue;
 		}
 		ap = aliases_lookup(buf, bp - buf);
 		if (ap == NULL)
@@ -221,10 +221,10 @@ iconv_t iconv_open(const char* tocode, const char* fromcode)
 		}
 		if (ap->encoding_index == ei_local_char)
 		{
-			fromcode = locale_charset();
-			if (fromcode[0] == '\0')
+			//fromcode = locale_charset();
+			//if (fromcode[0] == '\0')
 				goto invalid;
-			continue;
+			//continue;
 		}
 		if (ap->encoding_index == ei_local_wchar_t)
 		{
